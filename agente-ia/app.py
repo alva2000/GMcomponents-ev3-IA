@@ -185,7 +185,7 @@ agent = get_agent()
 # ─────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("## 🖥️ GM Components")
-    st.markdown("**Agente IA Para La EV 3**")
+    st.markdown("**Agente IA**")
     st.markdown("---")
 
     pagina = st.radio(
@@ -304,7 +304,7 @@ API Catálogo → RAG Index
         st.markdown("### 🏁 Resultado del análisis")
 
         if res.get("desde_cache"):
-            st.markdown('<span class="cache-badge">⚡ Desde memoria de largo plazo</span>', unsafe_allow_html=True)
+            st.markdown('<span class="cache-badge"> Desde memoria de largo plazo</span>', unsafe_allow_html=True)
 
         if res["ok"]:
             # Componentes analizados
@@ -329,10 +329,10 @@ API Catálogo → RAG Index
             st.markdown(f'<div class="result-box">{res["resultado"]}</div>', unsafe_allow_html=True)
 
             # Contexto usado (expandible)
-            with st.expander("🔍 Contexto RAG utilizado"):
+            with st.expander(" Contexto RAG utilizado"):
                 st.text(res.get("contexto_rag", "Sin contexto RAG"))
 
-            with st.expander("🌐 Contexto Web utilizado"):
+            with st.expander(" Contexto Web utilizado"):
                 st.text(res.get("contexto_web", "Sin contexto web"))
         else:
             st.error(res["resultado"])
